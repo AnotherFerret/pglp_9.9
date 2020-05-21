@@ -1,6 +1,6 @@
 package formes;
 
-public abstract class Forme {
+public abstract class Forme implements Groupe {
 
 	String id;
 	String type = "forme";
@@ -68,7 +68,8 @@ public abstract class Forme {
 		this.y2 = y2;
 	}
 	
-	public boolean bougeForme(double x1, double x2, double y1, double y2)
+	//fixe une nouvelle position pour la forme
+	public boolean positionneForme(double x1, double x2, double y1, double y2)
 	{
 		this.x1 = x1;
 		this.x2 = x2;
@@ -77,10 +78,19 @@ public abstract class Forme {
 		return true;
 	}
 	
-	public boolean afficheForme()
+	//déplace la forme par rapport à sa position actuelle
+	public boolean bougeForme(double x1, double x2, double y1, double y2)
 	{
-		System.out.print("Je suis un(e) " + type + " aux coordonnées x : " + x1 + "," + x2 + "et y : " + y1 + "," + y2 + "\n");
+		this.x1 += x1;
+		this.x2 += x2;
+		this.y1 += y1;
+		this.y2 += y2;
 		return true;
+	}
+	
+	public void afficheForme()
+	{
+		System.out.print("Je suis un(e) " + type + " aux coordonnées x : " + x1 + ", " + x2 + " et y : " + y1 + ", " + y2 + "\n");
 	}
 	
 }
