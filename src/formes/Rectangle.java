@@ -17,4 +17,13 @@ public class Rectangle extends Forme {
 		super.afficheForme();
 		System.out.print("Ma largeur est " + largeur + " ma longueur est : " + longueur + "\n");
 	}
+	
+	public double getLongueur()
+	{
+		return this.longueur;
+	}
+	public double getLargeur()
+	{
+		return this.largeur;
+	}
 }

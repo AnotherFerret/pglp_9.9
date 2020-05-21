@@ -12,6 +12,8 @@ Le dépôt _github_ sera nommé `pglp_9.9`.
 
 1. Proposer et implémenter une hiérarchie de classe représentant les formes graphiques.
 1. Représenter la notion de groupe de formes en appliquant le pattern `Composite`.
+
+
 2. Render les formes et les groupes persistants en utilisant le pattern `DAO` et JDBC.
 
 1. Réaliser la classe `DrawingTUI` qui se chargera des interactions avec l’utilisateur.

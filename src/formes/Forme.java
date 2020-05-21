@@ -8,6 +8,7 @@ public abstract class Forme implements Groupe {
 	double x2;
 	double y1;
 	double y2;
+
 	
 	/*public static class Builder
 	{
@@ -90,7 +91,31 @@ public abstract class Forme implements Groupe {
 	
 	public void afficheForme()
 	{
-		System.out.print("Je suis un(e) " + type + " aux coordonnées x : " + x1 + ", " + x2 + " et y : " + y1 + ", " + y2 + "\n");
+		System.out.print("Je suis le " + type + " " + id + " aux coordonnées x : " + x1 + ", " + x2 + " et y : " + y1 + ", " + y2 + "\n");
 	}
 	
+	public String getId()
+	{
+		return this.id;
+	}
+	public String getType()
+	{
+		return this.type;
+	}
+	public double getx1()
+	{
+		return this.x1;
+	}
+	public double getx2()
+	{
+		return this.x2;
+	}
+	public double gety1()
+	{
+		return this.y1;
+	}
+	public double gety2()
+	{
+		return this.y2;
+	}
 }

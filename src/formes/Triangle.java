@@ -18,4 +18,17 @@ public class Triangle extends Forme {
 		super.afficheForme();
 		System.out.print("Mes côtés mesurent " + c1 + " " + c2 + " " + c3 + "\n" );
 	}
+	
+	public double getc1()
+	{
+		return this.c1;
+	}
+	public double getc2()
+	{
+		return this.c2;
+	}
+	public double getc3()
+	{
+		return this.c3;
+	}
 }

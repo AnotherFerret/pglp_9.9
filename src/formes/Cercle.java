@@ -14,5 +14,8 @@ public class Cercle extends Forme {
 		super.afficheForme();
 		System.out.print("Mon rayon est " + rayon + "\n");
 	}
-	
+	public double getRayon()
+	{
+		return this.rayon;
+	}
 }

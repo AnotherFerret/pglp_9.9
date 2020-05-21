@@ -14,4 +14,9 @@ public class Carre extends Forme {
 		super.afficheForme();
 		System.out.print("Mes côtés mesurent " + cote + "\n");
 	}
+	
+	public double getCote()
+	{
+		return this.cote;
+	}
 }
