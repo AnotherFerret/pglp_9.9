@@ -12,7 +12,7 @@ public class Cercle extends Forme {
 	public void afficheForme()
 	{
 		super.afficheForme();
-		System.out.print("Mon rayon est " + rayon + "\n");
+		System.out.print("rayon :" + rayon + "\n");
 	}
 	public double getRayon()
 	{

@@ -16,7 +16,7 @@ public class Triangle extends Forme {
 	public void afficheForme()
 	{
 		super.afficheForme();
-		System.out.print("Mes côtés mesurent " + c1 + " " + c2 + " " + c3 + "\n" );
+		System.out.print("côtés : " + c1 + " " + c2 + " " + c3 + "\n" );
 	}
 	
 	public double getc1()

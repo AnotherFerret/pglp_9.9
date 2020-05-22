@@ -81,7 +81,7 @@ public abstract class Forme implements Groupe {
 	
 	public void afficheForme()
 	{
-		System.out.print("Je suis le " + type + " " + id + " aux coordonnées x : " + x + ", et y : " + y +"\n");
+		System.out.print(type + " " + id + " (x : " + x + ")  (y : " + y +")\n");
 	}
 	
 	public String getId()

@@ -12,7 +12,7 @@ public class Carre extends Forme {
 	public void afficheForme()
 	{
 		super.afficheForme();
-		System.out.print("Mes côtés mesurent " + cote + "\n");
+		System.out.print("côté :" + cote + "\n");
 	}
 	
 	public double getCote()
