@@ -7,19 +7,19 @@ public class CommandFactory{
 	   private static HashMap<String, Command> commands;
 
 	private CommandFactory() {
-	    	this.commands = new HashMap<>();
+	    	CommandFactory.commands = new HashMap<>();
 	    }
 	    
 	    public void addCommand(String name, Command command)
 	    {
-	    	this.commands.put(name, command);
+	    	CommandFactory.commands.put(name, command);
 	    }
 	    
 	    public void executeCommand(String name)
 	    {
-	    	if(this.commands.containsKey(name))
+	    	if(CommandFactory.commands.containsKey(name))
 	    	{
-	    		this.commands.get(name).execute();
+	    		CommandFactory.commands.get(name).execute();
 	    	}
 	    	else
 	    	{
