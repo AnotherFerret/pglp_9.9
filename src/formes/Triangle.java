@@ -5,9 +5,9 @@ public class Triangle extends Forme {
 	double c2; 
 	double c3;
 	
-	public Triangle(String id, double c1, double c2, double c3, double x1, double x2, double y1, double y2)
+	public Triangle(String id, double c1, double c2, double c3, double x1, double y1)
 	{
-		super(id, "Triangle", x1, x2, y1, y2);
+		super(id, "Triangle", x1, y1);
 		this.c1 = c1;
 		this.c2 = c2;
 		this.c3 = c3;

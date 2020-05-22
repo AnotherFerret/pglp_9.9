@@ -4,10 +4,8 @@ public abstract class Forme implements Groupe {
 
 	String id;
 	String type = "forme";
-	double x1;
-	double x2;
-	double y1;
-	double y2;
+	double x;
+	double y;
 
 	
 	/*public static class Builder
@@ -59,39 +57,31 @@ public abstract class Forme implements Groupe {
 		}
 	} unused yet */
 	
-	Forme(String id, String type, double x1, double x2, double y1, double y2)
+	Forme(String id, String type, double x, double y)
 	{
 		this.id = id;
 		this.type = type;
-		this.x1 = x1;
-		this.x2 = x2;
-		this.y1 = y1;
-		this.y2 = y2;
+		this.x = x;
+		this.y = y;
 	}
 	
 	//fixe une nouvelle position pour la forme
-	public boolean positionneForme(double x1, double x2, double y1, double y2)
+	public void positionneForme(double x, double y)
 	{
-		this.x1 = x1;
-		this.x2 = x2;
-		this.y1 = y1;
-		this.y2 = y2;
-		return true;
+		this.x = x;
+		this.y = y;
 	}
 	
 	//déplace la forme par rapport à sa position actuelle
-	public boolean bougeForme(double x1, double x2, double y1, double y2)
+	public void bougeForme(double x, double y)
 	{
-		this.x1 += x1;
-		this.x2 += x2;
-		this.y1 += y1;
-		this.y2 += y2;
-		return true;
+		this.x += x;
+		this.y += y;
 	}
 	
 	public void afficheForme()
 	{
-		System.out.print("Je suis le " + type + " " + id + " aux coordonnées x : " + x1 + ", " + x2 + " et y : " + y1 + ", " + y2 + "\n");
+		System.out.print("Je suis le " + type + " " + id + " aux coordonnées x : " + x + ", et y : " + y +"\n");
 	}
 	
 	public String getId()
@@ -102,20 +92,12 @@ public abstract class Forme implements Groupe {
 	{
 		return this.type;
 	}
-	public double getx1()
+	public double getx()
 	{
-		return this.x1;
+		return this.x;
 	}
-	public double getx2()
+	public double gety()
 	{
-		return this.x2;
-	}
-	public double gety1()
-	{
-		return this.y1;
-	}
-	public double gety2()
-	{
-		return this.y2;
+		return this.y;
 	}
 }

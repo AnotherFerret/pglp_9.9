@@ -19,15 +19,13 @@ public class DAOCarre extends DAO<Carre> {
 	public boolean create(Carre p) throws SQLException {
 		
 		PreparedStatement prepare = conn.prepareStatement(
-				"INSERT INTO carre (id, type, x1, x2, y1, y2, cote) VALUES(?, ?, ?, ?, ?, ?, ?");
+				"INSERT INTO carre (id, type, x1, y1, cote) VALUES(?, ?, ?, ?, ?");
 		
 		prepare.setString(1, p.getId());
 		prepare.setString(2, p.getType());
-		prepare.setDouble(3, p.getx1());
-		prepare.setDouble(4, p.getx2());
-		prepare.setDouble(5, p.gety1());
-		prepare.setDouble(6, p.gety2());
-		prepare.setDouble(7, p.getCote());
+		prepare.setDouble(3, p.getx());
+		prepare.setDouble(4, p.gety());
+		prepare.setDouble(5, p.getCote());
 		
 		prepare.executeUpdate();
 		
@@ -42,8 +40,7 @@ public class DAOCarre extends DAO<Carre> {
 		prepare.setString(1, id);
 		ResultSet result = prepare.executeQuery();
 		
-		Carre t = new Carre(result.getString("id"), result.getDouble("x1"), result.getDouble("x2"),  result.getDouble("y1"),  result.getDouble("y2"),  
-				result.getDouble("cote"));
+		Carre t = new Carre(result.getString("id"), result.getDouble("x1"),  result.getDouble("y1"), result.getDouble("cote"));
 		
 		conn.close();
 		return t;
@@ -53,14 +50,12 @@ public class DAOCarre extends DAO<Carre> {
 	public boolean update(Carre p) throws SQLException {
 		
 		PreparedStatement prepare = conn.prepareStatement(
-				"UPDATE carre SET (x1, x2, y1, y2, cote) VALUES(?,?,?,?,?) WHERE id = ?");
+				"UPDATE carre SET (x1, y1, cote) VALUES(?,?,?) WHERE id = ?");
 		
-		prepare.setString(6, p.getId());
-		prepare.setDouble(1, p.getx1());
-		prepare.setDouble(2, p.getx2());
-		prepare.setDouble(3, p.gety1());
-		prepare.setDouble(4, p.gety2());
-		prepare.setDouble(5, p.getCote());
+		prepare.setString(4, p.getId());
+		prepare.setDouble(1, p.getx());
+		prepare.setDouble(2, p.gety());
+		prepare.setDouble(3, p.getCote());
 		
 		prepare.executeUpdate();
 		

@@ -5,9 +5,9 @@ public class Rectangle extends Forme {
 	double longueur;
 	double largeur;
 	
-	public Rectangle(String id, double longueur, double largeur, double x1, double x2, double y1, double y2)
+	public Rectangle(String id, double longueur, double largeur, double x1, double y1)
 	{
-		super(id, "Rectangle", x1, x2, y1, y2);
+		super(id, "Rectangle", x1, y1);
 		this.longueur = longueur;
 		this.largeur = largeur;
 	}
@@ -17,6 +17,7 @@ public class Rectangle extends Forme {
 		super.afficheForme();
 		System.out.print("Ma largeur est " + largeur + " ma longueur est : " + longueur + "\n");
 	}
+
 	
 	public double getLongueur()
 	{
@@ -26,4 +27,5 @@ public class Rectangle extends Forme {
 	{
 		return this.largeur;
 	}
+
 }

@@ -19,16 +19,14 @@ public class DAORectangle extends DAO<Rectangle> {
 	public boolean create(Rectangle p) throws SQLException {
 		
 		PreparedStatement prepare = conn.prepareStatement(
-				"INSERT INTO rectangle (id, type, x1, x2, y1, y2, longueur, largeur) VALUES(?, ?, ?, ?, ?, ?, ?, ?");
+				"INSERT INTO rectangle (id, type, x1, y1, longueur, largeur) VALUES(?, ?, ?, ?, ?, ?");
 		
 		prepare.setString(1, p.getId());
 		prepare.setString(2, p.getType());
-		prepare.setDouble(3, p.getx1());
-		prepare.setDouble(4, p.getx2());
-		prepare.setDouble(5, p.gety1());
-		prepare.setDouble(6, p.gety2());
-		prepare.setDouble(7, p.getLongueur());
-		prepare.setDouble(8, p.getLargeur());
+		prepare.setDouble(3, p.getx());
+		prepare.setDouble(4, p.gety());
+		prepare.setDouble(5, p.getLongueur());
+		prepare.setDouble(6, p.getLargeur());
 		
 		prepare.executeUpdate();
 		
@@ -43,8 +41,7 @@ public class DAORectangle extends DAO<Rectangle> {
 		prepare.setString(1, id);
 		ResultSet result = prepare.executeQuery();
 		
-		Rectangle t = new Rectangle(result.getString("id"), result.getDouble("x1"), result.getDouble("x2"),  result.getDouble("y1"),  result.getDouble("y2"),  
-				result.getDouble("longueur"),  result.getDouble("largeur"));
+		Rectangle t = new Rectangle(result.getString("id"), result.getDouble("x1"),  result.getDouble("y1"),  result.getDouble("longueur"),  result.getDouble("largeur"));
 		
 		conn.close();
 		return t;
@@ -54,15 +51,13 @@ public class DAORectangle extends DAO<Rectangle> {
 	public boolean update(Rectangle p) throws SQLException {
 		
 		PreparedStatement prepare = conn.prepareStatement(
-				"UPDATE rectangle SET (x1, x2, y1, y2, longueur, largeur) VALUES(?,?,?,?,?,?) WHERE id = ?");
+				"UPDATE rectangle SET (x1, y1, longueur, largeur) VALUES(?,?,?,?) WHERE id = ?");
 		
-		prepare.setString(7, p.getId());
-		prepare.setDouble(1, p.getx1());
-		prepare.setDouble(2, p.getx2());
-		prepare.setDouble(3, p.gety1());
-		prepare.setDouble(4, p.gety2());
-		prepare.setDouble(5, p.getLongueur());
-		prepare.setDouble(6, p.getLargeur());
+		prepare.setString(5, p.getId());
+		prepare.setDouble(1, p.getx());
+		prepare.setDouble(2, p.gety());
+		prepare.setDouble(3, p.getLongueur());
+		prepare.setDouble(4, p.getLargeur());
 		
 		prepare.executeUpdate();
 		
